@@ -29,10 +29,13 @@ class API:
         post_data = self.POST_DATA_TEMPLATE.copy()
         post_data["api_paste_code"] = data
 
-        if (expire is not None) and (expire in self.ACCEPTED_EXPIRE_VALUES):
-            post_data["api_paste_expire_date"] = expire
-        else:
-            raise PastebinInvalidExpireParameter
+        if expire is not None:
+            if expire in self.ACCEPTED_EXPIRE_VALUES:
+                post_data["api_paste_expire_date"] = expire
+            else:
+                raise PastebinInvalidExpireParameter
+
+        return post_data
 
     @staticmethod
     def __parse_post_response(response):
