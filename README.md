@@ -1,4 +1,4 @@
-<p align="justify" style="font-weight: bolder; font-size: 30px;">OneLink</p>
+<h1 align="center">OneLink</h1>
 
 > _❝ __One link to rule them all, one link to find them, one link to join them all, and in downtime bind them.__ ❞_
 
