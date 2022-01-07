@@ -1,7 +1,7 @@
 import json
 import requests
 from env import api_key
-from exceptions import *
+from pastebin_exceptions import *
 from urllib.parse import urlparse
 
 

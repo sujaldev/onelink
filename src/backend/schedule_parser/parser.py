@@ -1,4 +1,4 @@
-from exceptions import *
+from parser_exceptions import *
 from datetime import datetime
 from event_chain import EventChain, EventChainNode
 
@@ -45,7 +45,7 @@ class EverydayParser:
     pass
 
 
-class Config:
+class Parser:
     def __init__(self, raw_config):
         try:
             config_type = raw_config["type"]
