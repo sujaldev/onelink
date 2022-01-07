@@ -25,11 +25,11 @@ class WeekSchedule:
         day = self.days[day_index]
         event = day.match_time_with_event(time)
         if event:
-            return event
+            return event.redirect_url
         day = day.previous_day
         event = day.match_time_with_last_event(time)
         if event:
-            return event
+            return event.redirect_url
 
     def __getitem__(self, item):
         return self.days[item]
@@ -56,9 +56,12 @@ class DaySchedule:
                 return event
 
     def match_time_with_last_event(self, time):
-        event = self.events[-1]
-        if event.start <= time <= event.end:
-            return event
+        try:
+            event = self.events[-1]
+            if event.start <= time <= event.end:
+                return event
+        except IndexError:
+            return None
 
     def __repr__(self):
         table = ""

@@ -1,10 +1,18 @@
-from weekday_schedule.parser import WeekdayScheduleParser
+from .weekday_schedule.parser import WeekdayScheduleParser
+
+
+class ParserException(Exception):
+    def __init__(self):
+        super().__init__("An error occurred while parsing, invalid raw_config")
 
 
 class Parser:
     def __init__(self, raw_config):
         self.raw_config = raw_config
-        self.parsed = self.parse()
+        try:
+            self.parsed = self.parse()
+        except KeyError:
+            raise ParserException
 
     def parse(self):
         config_type = self.raw_config["type"]
@@ -13,7 +21,7 @@ class Parser:
         elif config_type == "daily":
             parser = None  # not implement yet
         else:
-            raise Exception("Invalid config type, can either be 'weekdays' or 'daily'")
+            raise KeyError
 
         raw_schedule = self.raw_config["schedule"]
         return parser(raw_schedule).parsed
