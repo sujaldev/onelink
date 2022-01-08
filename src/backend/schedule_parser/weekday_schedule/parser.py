@@ -1,11 +1,6 @@
 from .structs import *
 
 
-def interlink_nodes(prev_node, current_node):
-    prev_node.next_day = current_node
-    current_node.previous_day = prev_node
-
-
 def time_object_from_string(time_string):
     time_fmt = "%d %H:%M"
     return datetime.strptime(time_string, time_fmt)
@@ -24,7 +19,7 @@ class WeekdayScheduleParser:
 
     def _link_monday_with_sunday(self):
         sunday, monday = self.parsed.days[-1], self.parsed.days[0]
-        interlink_nodes(sunday, monday)
+        monday.previous_day = sunday
 
     def parse(self):
         prev_day_node = None
@@ -32,7 +27,7 @@ class WeekdayScheduleParser:
             current_day_node = self._get_parsed_day(day_num)
             self.parsed.days.append(current_day_node)
             if prev_day_node:
-                interlink_nodes(prev_day_node, current_day_node)
+                current_day_node.previous_day = prev_day_node
             prev_day_node = current_day_node
 
         self._link_monday_with_sunday()

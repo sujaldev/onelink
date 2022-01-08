@@ -47,7 +47,6 @@ class DaySchedule:
         self.day_name = datetime.strptime(f"0{self.day_num}", "%d").strftime("%a")
 
         self.previous_day = None
-        self.next_day = None
         self.events = []
 
     def match_time_with_event(self, time):
