@@ -1,4 +1,4 @@
-from flask import Flask, redirect, request
+from flask import Flask, redirect, request, render_template
 from redirect_lib.pastebin.api import API
 from redirect_lib.schedule_parser import Parser, ParserException
 from json import JSONDecodeError
@@ -8,7 +8,12 @@ app = Flask(__name__)
 pastebin_api = API()
 
 
-@app.route("/g/<copy_code>", methods=['GET'])
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+
+@app.route("/g/<copy_code>")
 def copy_code_redirect(copy_code):
     try:
         raw_config = pastebin_api.copy(copy_code)
