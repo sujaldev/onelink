@@ -1,5 +1,6 @@
-![onelink](https://github.com/sujaldev/onelink/blob/main/src/static/img/readme/header.png?raw=true)
 <div align="center">
+    <img alt="Onelink Header" src="https://github.com/sujaldev/onelink/blob/main/src/static/img/readme/header.png?raw=true">
+    <br>
     <img alt="JavaScript" width="24px" src="https://github.com/github/explore/blob/main/topics/javascript/javascript.png?raw=true">
     <img alt="HTML5" width="26px" src="https://github.com/github/explore/blob/main/topics/html/html.png?raw=true">
     <img alt="CSS3" width="26px" src="https://github.com/github/explore/blob/main/topics/css/css.png?raw=true">
