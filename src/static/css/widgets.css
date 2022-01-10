@@ -1,0 +1,77 @@
+/* --------------------------- Main Settings Widget --------------------------- */
+.settings-container {
+    position: absolute;
+    width: 52vw;
+    height: 750px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ------------------ Widget Layers ------------------ */
+
+
+/* ---------     Commons     --------- */
+.settings-container > * {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.glow-elem {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* ------------------------------------ */
+
+
+/* ---------   Main Layers    --------- */
+.blur-layer {
+    background: rgba(46, 52, 63, 0.01);
+    box-shadow: 4px 4px 130px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(200px);
+    border-radius: 10px;
+    border: 1px solid transparent;
+    border-right-color: rgba(255, 255, 255, 0.1);
+}
+
+.color-layer {
+    background: linear-gradient(
+            180deg,
+            rgba(0, 224, 255, 0.03) -45%,
+            rgba(6, 225, 255, 0.03) 102%
+    );
+    border: 2px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.2);
+    border-left-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+/* ------------------------------------ */
+
+
+/* ---------  Glow Elements  --------- */
+.arc {
+    background-image: url("../img/glow-elements/spot-light.svg");
+    margin-left: 5%;
+}
+
+.triangle {
+    background-image: url("../img/glow-elements/triangle.svg");
+    top: 65%;
+    left: -5%;
+    width: 311px;
+    height: 309px;
+}
+
+.pentagon {
+    background-image: url("../img/glow-elements/pentagon.svg");
+    top: 30%;
+    left: 85%;
+    width: 374px;
+    height: 386px;
+}
+
+/* ------------------------------------ */
+/* ----------------------------------------------------------------------------- */
