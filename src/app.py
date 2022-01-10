@@ -1,6 +1,6 @@
 from flask import Flask, redirect, request
-from pastebin.api import API
-from schedule_parser import Parser, ParserException
+from redirect_lib.pastebin.api import API
+from redirect_lib.schedule_parser import Parser, ParserException
 from json import JSONDecodeError
 
 app = Flask(__name__)
