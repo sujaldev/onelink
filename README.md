@@ -26,7 +26,5 @@ This is just the design, actual web app is in development right now and might di
 
 ---
 
-## Contributors
-
-- Frontend: [@usyntest](https://github.com/usyntest) <br>
-- Backend: [@sujaldev](https://github.com/sujaldev) <br>
+#### Note
+Not working on this currently, will continue next year
